@@ -35,14 +35,14 @@
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.fatherNameTextBox = new System.Windows.Forms.TextBox();
             this.birthTextBox = new System.Windows.Forms.TextBox();
-            this.socStatusTextBox = new System.Windows.Forms.TextBox();
-            this.currStatusTextBox = new System.Windows.Forms.TextBox();
             this.fatherNameLbl = new System.Windows.Forms.Label();
             this.birthLbl = new System.Windows.Forms.Label();
             this.socStatusLbl = new System.Windows.Forms.Label();
             this.curStatusLbl = new System.Windows.Forms.Label();
             this.acceptBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
+            this.socStatusComboBox = new System.Windows.Forms.ComboBox();
+            this.currStatusComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // familyNameLbl
@@ -90,20 +90,6 @@
             this.birthTextBox.Name = "birthTextBox";
             this.birthTextBox.Size = new System.Drawing.Size(352, 22);
             this.birthTextBox.TabIndex = 5;
-            // 
-            // socStatusTextBox
-            // 
-            this.socStatusTextBox.Location = new System.Drawing.Point(132, 118);
-            this.socStatusTextBox.Name = "socStatusTextBox";
-            this.socStatusTextBox.Size = new System.Drawing.Size(352, 22);
-            this.socStatusTextBox.TabIndex = 6;
-            // 
-            // currStatusTextBox
-            // 
-            this.currStatusTextBox.Location = new System.Drawing.Point(132, 146);
-            this.currStatusTextBox.Name = "currStatusTextBox";
-            this.currStatusTextBox.Size = new System.Drawing.Size(352, 22);
-            this.currStatusTextBox.TabIndex = 7;
             // 
             // fatherNameLbl
             // 
@@ -161,6 +147,22 @@
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
             // 
+            // socStatusComboBox
+            // 
+            this.socStatusComboBox.FormattingEnabled = true;
+            this.socStatusComboBox.Location = new System.Drawing.Point(132, 118);
+            this.socStatusComboBox.Name = "socStatusComboBox";
+            this.socStatusComboBox.Size = new System.Drawing.Size(352, 24);
+            this.socStatusComboBox.TabIndex = 14;
+            // 
+            // currStatusComboBox
+            // 
+            this.currStatusComboBox.FormattingEnabled = true;
+            this.currStatusComboBox.Location = new System.Drawing.Point(132, 146);
+            this.currStatusComboBox.Name = "currStatusComboBox";
+            this.currStatusComboBox.Size = new System.Drawing.Size(352, 24);
+            this.currStatusComboBox.TabIndex = 15;
+            // 
             // patientEdit
             // 
             this.AcceptButton = this.acceptBtn;
@@ -169,14 +171,14 @@
             this.CancelButton = this.cancelBtn;
             this.ClientSize = new System.Drawing.Size(494, 296);
             this.ControlBox = false;
+            this.Controls.Add(this.currStatusComboBox);
+            this.Controls.Add(this.socStatusComboBox);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.acceptBtn);
             this.Controls.Add(this.curStatusLbl);
             this.Controls.Add(this.socStatusLbl);
             this.Controls.Add(this.birthLbl);
             this.Controls.Add(this.fatherNameLbl);
-            this.Controls.Add(this.currStatusTextBox);
-            this.Controls.Add(this.socStatusTextBox);
             this.Controls.Add(this.birthTextBox);
             this.Controls.Add(this.fatherNameTextBox);
             this.Controls.Add(this.nameTextBox);
@@ -200,13 +202,13 @@
         public System.Windows.Forms.TextBox nameTextBox;
         public System.Windows.Forms.TextBox fatherNameTextBox;
         public System.Windows.Forms.TextBox birthTextBox;
-        public System.Windows.Forms.TextBox socStatusTextBox;
-        public System.Windows.Forms.TextBox currStatusTextBox;
         private System.Windows.Forms.Label fatherNameLbl;
         private System.Windows.Forms.Label birthLbl;
         private System.Windows.Forms.Label socStatusLbl;
         private System.Windows.Forms.Label curStatusLbl;
         private System.Windows.Forms.Button acceptBtn;
         private System.Windows.Forms.Button cancelBtn;
+        public System.Windows.Forms.ComboBox socStatusComboBox;
+        public System.Windows.Forms.ComboBox currStatusComboBox;
     }
 }

@@ -40,7 +40,7 @@ namespace RDBMSHospital
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
                         //Edit
-                        if (dbm.EditPatient(id, frm.familyNameTextBox.Text, frm.nameTextBox.Text, frm.fatherNameTextBox.Text, Convert.ToDateTime(frm.birthTextBox.Text), db.social_status.Where(p => p.soc_status.Equals(frm.socStatusTextBox.Text)).First().id, db.current_status.Where(p => p.curr_status.Equals(frm.currStatusTextBox.Text)).First().id))
+                        if (dbm.EditPatient(id, frm.familyNameTextBox.Text, frm.nameTextBox.Text, frm.fatherNameTextBox.Text, Convert.ToDateTime(frm.birthTextBox.Text), db.social_status.Where(p => p.soc_status.Equals(frm.socStatusComboBox.SelectedItem.ToString())).First().id, db.current_status.Where(p => p.curr_status.Equals(frm.currStatusComboBox.SelectedItem.ToString())).First().id))
                             MessageBox.Show("OK", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         else MessageBox.Show("Error", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         patiencesDataGridView.DataSource = db.patients.ToList();
@@ -63,7 +63,7 @@ namespace RDBMSHospital
             {
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    if (dbm.AddPatient(frm.familyNameTextBox.Text, frm.nameTextBox.Text, frm.fatherNameTextBox.Text, Convert.ToDateTime(frm.birthTextBox.Text), db.social_status.Where(p => p.soc_status.Equals(frm.socStatusTextBox.Text)).First().id, db.current_status.Where(p => p.curr_status.Equals(frm.currStatusTextBox.Text)).First().id) == null)
+                    if (dbm.AddPatient(frm.familyNameTextBox.Text, frm.nameTextBox.Text, frm.fatherNameTextBox.Text, Convert.ToDateTime(frm.birthTextBox.Text), db.social_status.Where(p => p.soc_status.Equals(frm.socStatusComboBox.SelectedItem.ToString())).First().id, db.current_status.Where(p => p.curr_status.Equals(frm.currStatusComboBox.SelectedItem.ToString())).First().id) == null)
                         MessageBox.Show("Error", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     patiencesDataGridView.DataSource = db.patients.ToList();
                 }
@@ -82,7 +82,7 @@ namespace RDBMSHospital
                 {
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
-                        if (dbm.EditDoctor(id, frm.familyNameTextBox.Text, frm.nameTextBox.Text, frm.fatherNameTextBox.Text, db.doctor_position.Where(p => p.position.Equals(frm.posTextBox.Text)).First().id, frm.qualifTextBox.Text))
+                        if (dbm.EditDoctor(id, frm.familyNameTextBox.Text, frm.nameTextBox.Text, frm.fatherNameTextBox.Text, db.doctor_position.Where(p => p.position.Equals(frm.posComboBox.SelectedItem.ToString())).First().id, frm.qualifTextBox.Text))
                             MessageBox.Show("OK", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         else MessageBox.Show("Error", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         doctorsDataGridView.DataSource = db.doctors.ToList();
@@ -110,7 +110,7 @@ namespace RDBMSHospital
             {
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    if (dbm.AddDoctor(frm.familyNameTextBox.Text, frm.nameTextBox.Text, frm.fatherNameTextBox.Text, db.doctor_position.Where(p => p.position.Equals(frm.posTextBox.Text)).First().id, frm.qualifTextBox.Text) == null)
+                    if (dbm.AddDoctor(frm.familyNameTextBox.Text, frm.nameTextBox.Text, frm.fatherNameTextBox.Text, db.doctor_position.Where(p => p.position.Equals(frm.posComboBox.SelectedItem.ToString())).First().id, frm.qualifTextBox.Text) == null)
                         MessageBox.Show("Error", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     doctorsDataGridView.DataSource = db.doctors.ToList();
                 }

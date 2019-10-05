@@ -13,9 +13,13 @@ namespace RDBMSHospital
     public partial class doctorEdit : Form
     {
         doctor d;
+        HospitalContext db = new HospitalContext();
         public doctorEdit()
         {
             InitializeComponent();
+            List<string> docPos = new List<string>();
+            for (int i = 0; i < db.doctor_position.ToList().Count; i++) docPos.Add(db.doctor_position.ToList()[i].position);
+            posComboBox.DataSource = docPos;
         }
         public doctorEdit(doctor nd)
         {
@@ -24,7 +28,11 @@ namespace RDBMSHospital
             familyNameTextBox.Text = d.family_name;
             nameTextBox.Text = d.name;
             fatherNameTextBox.Text = d.father_name;
-            posTextBox.Text = d.doctor_position.position;
+            //posTextBox.Text = d.doctor_position.position;
+            List<string> docPos = new List<string>();
+            for (int i = 0; i < db.doctor_position.ToList().Count; i++) docPos.Add(db.doctor_position.ToList()[i].position);
+            posComboBox.DataSource = docPos;
+            posComboBox.SelectedItem = d.doctor_position.position;
             qualifTextBox.Text = Convert.ToString(d.qualification);
         }
     }

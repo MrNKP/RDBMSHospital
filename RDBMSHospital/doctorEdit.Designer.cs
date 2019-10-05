@@ -33,7 +33,6 @@
             this.familyNameTextBox = new System.Windows.Forms.TextBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.fatherNameTextBox = new System.Windows.Forms.TextBox();
-            this.posTextBox = new System.Windows.Forms.TextBox();
             this.qualifTextBox = new System.Windows.Forms.TextBox();
             this.nameLbl = new System.Windows.Forms.Label();
             this.fatherNameLbl = new System.Windows.Forms.Label();
@@ -41,6 +40,7 @@
             this.qualifLbl = new System.Windows.Forms.Label();
             this.acceptBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
+            this.posComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // familyNameLbl
@@ -72,13 +72,6 @@
             this.fatherNameTextBox.Name = "fatherNameTextBox";
             this.fatherNameTextBox.Size = new System.Drawing.Size(352, 22);
             this.fatherNameTextBox.TabIndex = 3;
-            // 
-            // posTextBox
-            // 
-            this.posTextBox.Location = new System.Drawing.Point(125, 90);
-            this.posTextBox.Name = "posTextBox";
-            this.posTextBox.Size = new System.Drawing.Size(352, 22);
-            this.posTextBox.TabIndex = 4;
             // 
             // qualifTextBox
             // 
@@ -143,6 +136,14 @@
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
             // 
+            // posComboBox
+            // 
+            this.posComboBox.FormattingEnabled = true;
+            this.posComboBox.Location = new System.Drawing.Point(125, 90);
+            this.posComboBox.Name = "posComboBox";
+            this.posComboBox.Size = new System.Drawing.Size(352, 24);
+            this.posComboBox.TabIndex = 12;
+            // 
             // doctorEdit
             // 
             this.AcceptButton = this.acceptBtn;
@@ -151,6 +152,7 @@
             this.CancelButton = this.cancelBtn;
             this.ClientSize = new System.Drawing.Size(483, 264);
             this.ControlBox = false;
+            this.Controls.Add(this.posComboBox);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.acceptBtn);
             this.Controls.Add(this.qualifLbl);
@@ -158,7 +160,6 @@
             this.Controls.Add(this.fatherNameLbl);
             this.Controls.Add(this.nameLbl);
             this.Controls.Add(this.qualifTextBox);
-            this.Controls.Add(this.posTextBox);
             this.Controls.Add(this.fatherNameTextBox);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.familyNameTextBox);
@@ -178,7 +179,6 @@
         public System.Windows.Forms.TextBox familyNameTextBox;
         public System.Windows.Forms.TextBox nameTextBox;
         public System.Windows.Forms.TextBox fatherNameTextBox;
-        public System.Windows.Forms.TextBox posTextBox;
         public System.Windows.Forms.TextBox qualifTextBox;
         private System.Windows.Forms.Label nameLbl;
         private System.Windows.Forms.Label fatherNameLbl;
@@ -186,5 +186,6 @@
         private System.Windows.Forms.Label qualifLbl;
         private System.Windows.Forms.Button acceptBtn;
         private System.Windows.Forms.Button cancelBtn;
+        public System.Windows.Forms.ComboBox posComboBox;
     }
 }
