@@ -68,11 +68,23 @@
     <Compile Include="DataBase\patient_doctor.cs" />
     <Compile Include="DataBase\result.cs" />
     <Compile Include="DataBase\social_status.cs" />
+    <Compile Include="doctorEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="doctorEdit.Designer.cs">
+      <DependentUpon>doctorEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="patientEdit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="patientEdit.Designer.cs">
       <DependentUpon>patientEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="resultEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="resultEdit.Designer.cs">
+      <DependentUpon>resultEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="startForm.cs">
       <SubType>Form</SubType>
@@ -82,6 +94,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="doctorEdit.resx">
+      <DependentUpon>doctorEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="patientEdit.resx">
       <DependentUpon>patientEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -94,12 +109,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="resultEdit.resx">
+      <DependentUpon>resultEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="startForm.resx">
       <DependentUpon>startForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\current_status.datasource" />
+    <None Include="Properties\DataSources\doctor.datasource" />
     <None Include="Properties\DataSources\patient.datasource" />
+    <None Include="Properties\DataSources\result.datasource" />
     <None Include="Properties\DataSources\social_status.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
