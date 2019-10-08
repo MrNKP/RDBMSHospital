@@ -94,6 +94,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\ExtDoctor.cs" />
+    <Compile Include="Views\ExtPatient.cs" />
+    <Compile Include="Views\ExtResult.cs" />
     <EmbeddedResource Include="doctorEdit.resx">
       <DependentUpon>doctorEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +122,9 @@
     <None Include="Properties\DataSources\current_status.datasource" />
     <None Include="Properties\DataSources\doctor.datasource" />
     <None Include="Properties\DataSources\patient.datasource" />
+    <None Include="Properties\DataSources\RDBMSHospital.Views.ExtDoctor.datasource" />
+    <None Include="Properties\DataSources\RDBMSHospital.Views.ExtPatient.datasource" />
+    <None Include="Properties\DataSources\RDBMSHospital.Views.ExtResult.datasource" />
     <None Include="Properties\DataSources\result.datasource" />
     <None Include="Properties\DataSources\social_status.datasource" />
     <None Include="Properties\Settings.settings">

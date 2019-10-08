@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RDBMSHospital.Views;
 
 namespace RDBMSHospital.DataBaseManage
 {
@@ -12,6 +13,55 @@ namespace RDBMSHospital.DataBaseManage
         public DBManage(HospitalContext context)
         {
             db = context;
+        }
+        //views
+        public List<ExtResult> GetExtResults()
+        {
+            var k = db.results.Select(p => new ExtResult
+            {
+                id = p.id,
+                patientFamilyName = p.patient.family_name,
+                patientName = p.patient.name,
+                patientFatherName = p.patient.father_name,
+                doctorFamilyName = p.doctor.family_name,
+                doctorName = p.doctor.name,
+                doctorFatherName = p.doctor.father_name,
+                diagnosis = p.diagnosis,
+                outpatient_treatment = p.outpatient_treatment,
+                count_without_work = p.count_without_work,
+                clinical_account = p.clinical_account,
+                start = p.start,
+                predicted = p.predicted,
+                fact = p.fact
+            });
+            return k.ToList();
+        }
+        public List<ExtPatient> GetExtPatients()
+        {
+            var k = db.patients.Select(p => new ExtPatient
+            {
+                id = p.id,
+                familyName = p.family_name,
+                name = p.name,
+                fatherName = p.father_name,
+                birth = p.bitrh,
+                soc_status = p.social_status.soc_status,
+                curr_status = p.current_status.curr_status
+            });
+            return k.ToList();
+        }
+        public List<ExtDoctor> GetExtDoctors()
+        {
+            var k = db.doctors.Select(p => new ExtDoctor
+            {
+                id = p.id,
+                familyName = p.family_name,
+                name = p.name,
+                fatherName = p.father_name,
+                position = p.doctor_position.position,
+                qualification = p.qualification
+            });
+            return k.ToList();
         }
         // patient
         public bool EditPatient(int id, string fn, string n, string fan, DateTime birth, int ss, int cs)

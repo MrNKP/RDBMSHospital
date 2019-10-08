@@ -134,7 +134,7 @@
             // outpatientCheckBox
             // 
             this.outpatientCheckBox.AutoSize = true;
-            this.outpatientCheckBox.Location = new System.Drawing.Point(132, 202);
+            this.outpatientCheckBox.Location = new System.Drawing.Point(132, 204);
             this.outpatientCheckBox.Name = "outpatientCheckBox";
             this.outpatientCheckBox.Size = new System.Drawing.Size(18, 17);
             this.outpatientCheckBox.TabIndex = 10;
@@ -150,7 +150,7 @@
             // clinicalAccountCheckBox
             // 
             this.clinicalAccountCheckBox.AutoSize = true;
-            this.clinicalAccountCheckBox.Location = new System.Drawing.Point(132, 257);
+            this.clinicalAccountCheckBox.Location = new System.Drawing.Point(132, 261);
             this.clinicalAccountCheckBox.Name = "clinicalAccountCheckBox";
             this.clinicalAccountCheckBox.Size = new System.Drawing.Size(18, 17);
             this.clinicalAccountCheckBox.TabIndex = 12;
@@ -198,7 +198,7 @@
             // clinicLbl
             // 
             this.clinicLbl.AutoSize = true;
-            this.clinicLbl.Location = new System.Drawing.Point(12, 258);
+            this.clinicLbl.Location = new System.Drawing.Point(12, 260);
             this.clinicLbl.Name = "clinicLbl";
             this.clinicLbl.Size = new System.Drawing.Size(115, 17);
             this.clinicLbl.TabIndex = 18;
