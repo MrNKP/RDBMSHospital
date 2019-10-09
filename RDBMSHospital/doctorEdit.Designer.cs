@@ -122,7 +122,7 @@
             this.acceptBtn.Location = new System.Drawing.Point(8, 146);
             this.acceptBtn.Name = "acceptBtn";
             this.acceptBtn.Size = new System.Drawing.Size(469, 51);
-            this.acceptBtn.TabIndex = 10;
+            this.acceptBtn.TabIndex = 6;
             this.acceptBtn.Text = "Accept";
             this.acceptBtn.UseVisualStyleBackColor = true;
             // 
@@ -132,7 +132,7 @@
             this.cancelBtn.Location = new System.Drawing.Point(8, 203);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(469, 51);
-            this.cancelBtn.TabIndex = 11;
+            this.cancelBtn.TabIndex = 7;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
             // 
@@ -142,7 +142,7 @@
             this.posComboBox.Location = new System.Drawing.Point(125, 90);
             this.posComboBox.Name = "posComboBox";
             this.posComboBox.Size = new System.Drawing.Size(352, 24);
-            this.posComboBox.TabIndex = 12;
+            this.posComboBox.TabIndex = 4;
             // 
             // doctorEdit
             // 

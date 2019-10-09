@@ -143,8 +143,27 @@ namespace RDBMSHospital
                 {
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
-                        patient p = db.patients.Where(p1 => (p1.family_name == frm.patientFamilyNameTextBox.Text) && (p1.name == frm.patientNameTextBox.Text) && (p1.father_name == frm.patientFatherNameTextBox.Text)).FirstOrDefault();
-                        doctor d = db.doctors.Where(d1 => (d1.family_name == frm.doctorFamilyNameTextBox.Text) && (d1.name == frm.doctorNameTextBox.Text) && (d1.father_name == frm.doctorFatherNameTextBox.Text)).FirstOrDefault();
+                        //patient p = db.patients.Where(p1 => (p1.family_name == frm.patientFamilyNameTextBox.Text) && (p1.name == frm.patientNameTextBox.Text) && (p1.father_name == frm.patientFatherNameTextBox.Text)).FirstOrDefault();
+                        string locPatient = frm.patientComboBox.SelectedItem.ToString();
+                        char sp = ' ';
+                        int pos = locPatient.IndexOf(sp);
+                        string locPatientFamily = locPatient.Substring(0, pos);
+                        string locPatientName = locPatient.Substring(pos + 1);
+                        locPatient = locPatientName;
+                        pos = locPatient.IndexOf(sp);
+                        locPatientName = locPatient.Substring(0, pos);
+                        string locPatientFather = locPatient.Substring(pos + 1);
+                        patient p = db.patients.Where(p1 => (p1.family_name == locPatientFamily) && (p1.name == locPatientName) && (p1.father_name == locPatientFather)).FirstOrDefault();
+                        //doctor d = db.doctors.Where(d1 => (d1.family_name == frm.doctorFamilyNameTextBox.Text) && (d1.name == frm.doctorNameTextBox.Text) && (d1.father_name == frm.doctorFatherNameTextBox.Text)).FirstOrDefault();
+                        string locDoctor = frm.doctorComboBox.SelectedItem.ToString();
+                        pos = locDoctor.IndexOf(sp);
+                        string locDoctorFamily = locDoctor.Substring(0, pos);
+                        string locDoctorName = locDoctor.Substring(pos + 1);
+                        locDoctor = locDoctorName;
+                        pos = locDoctor.IndexOf(sp);
+                        locDoctorName = locDoctor.Substring(0, pos);
+                        string locDoctorFather = locDoctor.Substring(pos + 1);
+                        doctor d = db.doctors.Where(d1 => (d1.family_name == locDoctorFamily) && (d1.name == locDoctorName) && (d1.father_name == locDoctorFather)).FirstOrDefault();
                         if (dbm.EditResult(id, p.id, d.id, frm.diagnosisTextBox.Text, frm.outpatientCheckBox.Checked, Convert.ToInt32(frm.countDaysTextBox.Text), frm.clinicalAccountCheckBox.Checked, Convert.ToDateTime(frm.startDateTextBox.Text), Convert.ToDateTime(frm.predictedDateTextBox.Text), frm.factDateTextBox.Text))
                             MessageBox.Show("OK", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         else MessageBox.Show("Error", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -170,8 +189,27 @@ namespace RDBMSHospital
             {
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    patient p = db.patients.Where(p1 => (p1.family_name == frm.patientFamilyNameTextBox.Text) && (p1.name == frm.patientNameTextBox.Text) && (p1.father_name == frm.patientFatherNameTextBox.Text)).FirstOrDefault();
-                    doctor d = db.doctors.Where(d1 => (d1.family_name == frm.doctorFamilyNameTextBox.Text) && (d1.name == frm.doctorNameTextBox.Text) && (d1.father_name == frm.doctorFatherNameTextBox.Text)).FirstOrDefault();
+                    //patient p = db.patients.Where(p1 => (p1.family_name == frm.patientFamilyNameTextBox.Text) && (p1.name == frm.patientNameTextBox.Text) && (p1.father_name == frm.patientFatherNameTextBox.Text)).FirstOrDefault();
+                    string locPatient = frm.patientComboBox.SelectedItem.ToString();
+                    char sp = ' ';
+                    int pos = locPatient.IndexOf(sp);
+                    string locPatientFamily = locPatient.Substring(0, pos);
+                    string locPatientName = locPatient.Substring(pos + 1);
+                    locPatient = locPatientName;
+                    pos = locPatient.IndexOf(sp);
+                    locPatientName = locPatient.Substring(0, pos);
+                    string locPatientFather = locPatient.Substring(pos + 1);
+                    patient p = db.patients.Where(p1 => (p1.family_name == locPatientFamily) && (p1.name == locPatientName) && (p1.father_name == locPatientFather)).FirstOrDefault();
+                    //doctor d = db.doctors.Where(d1 => (d1.family_name == frm.doctorFamilyNameTextBox.Text) && (d1.name == frm.doctorNameTextBox.Text) && (d1.father_name == frm.doctorFatherNameTextBox.Text)).FirstOrDefault();
+                    string locDoctor = frm.doctorComboBox.SelectedItem.ToString();
+                    pos = locDoctor.IndexOf(sp);
+                    string locDoctorFamily = locDoctor.Substring(0, pos);
+                    string locDoctorName = locDoctor.Substring(pos + 1);
+                    locDoctor = locDoctorName;
+                    pos = locDoctor.IndexOf(sp);
+                    locDoctorName = locDoctor.Substring(0, pos);
+                    string locDoctorFather = locDoctor.Substring(pos + 1);
+                    doctor d = db.doctors.Where(d1 => (d1.family_name == locDoctorFamily) && (d1.name == locDoctorName) && (d1.father_name == locDoctorFather)).FirstOrDefault();
                     if (dbm.AddResult(p.id, d.id, frm.diagnosisTextBox.Text, frm.outpatientCheckBox.Checked, Convert.ToInt32(frm.countDaysTextBox.Text), frm.clinicalAccountCheckBox.Checked, Convert.ToDateTime(frm.startDateTextBox.Text), Convert.ToDateTime(frm.predictedDateTextBox.Text), frm.factDateTextBox.Text) == null)
                         MessageBox.Show("Error", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     //resultDataGridView.DataSource = db.results.ToList();

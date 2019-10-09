@@ -68,28 +68,28 @@
             this.familyNameTextBox.Location = new System.Drawing.Point(132, 6);
             this.familyNameTextBox.Name = "familyNameTextBox";
             this.familyNameTextBox.Size = new System.Drawing.Size(352, 22);
-            this.familyNameTextBox.TabIndex = 2;
+            this.familyNameTextBox.TabIndex = 1;
             // 
             // nameTextBox
             // 
             this.nameTextBox.Location = new System.Drawing.Point(132, 34);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(352, 22);
-            this.nameTextBox.TabIndex = 3;
+            this.nameTextBox.TabIndex = 2;
             // 
             // fatherNameTextBox
             // 
             this.fatherNameTextBox.Location = new System.Drawing.Point(132, 62);
             this.fatherNameTextBox.Name = "fatherNameTextBox";
             this.fatherNameTextBox.Size = new System.Drawing.Size(352, 22);
-            this.fatherNameTextBox.TabIndex = 4;
+            this.fatherNameTextBox.TabIndex = 3;
             // 
             // birthTextBox
             // 
             this.birthTextBox.Location = new System.Drawing.Point(132, 90);
             this.birthTextBox.Name = "birthTextBox";
             this.birthTextBox.Size = new System.Drawing.Size(352, 22);
-            this.birthTextBox.TabIndex = 5;
+            this.birthTextBox.TabIndex = 4;
             // 
             // fatherNameLbl
             // 
@@ -133,7 +133,7 @@
             this.acceptBtn.Location = new System.Drawing.Point(15, 175);
             this.acceptBtn.Name = "acceptBtn";
             this.acceptBtn.Size = new System.Drawing.Size(469, 51);
-            this.acceptBtn.TabIndex = 12;
+            this.acceptBtn.TabIndex = 7;
             this.acceptBtn.Text = "Accept";
             this.acceptBtn.UseVisualStyleBackColor = true;
             // 
@@ -143,7 +143,7 @@
             this.cancelBtn.Location = new System.Drawing.Point(15, 232);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(469, 51);
-            this.cancelBtn.TabIndex = 13;
+            this.cancelBtn.TabIndex = 8;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
             // 
@@ -153,7 +153,7 @@
             this.socStatusComboBox.Location = new System.Drawing.Point(132, 118);
             this.socStatusComboBox.Name = "socStatusComboBox";
             this.socStatusComboBox.Size = new System.Drawing.Size(352, 24);
-            this.socStatusComboBox.TabIndex = 14;
+            this.socStatusComboBox.TabIndex = 5;
             // 
             // currStatusComboBox
             // 
@@ -161,7 +161,7 @@
             this.currStatusComboBox.Location = new System.Drawing.Point(132, 146);
             this.currStatusComboBox.Name = "currStatusComboBox";
             this.currStatusComboBox.Size = new System.Drawing.Size(352, 24);
-            this.currStatusComboBox.TabIndex = 15;
+            this.currStatusComboBox.TabIndex = 6;
             // 
             // patientEdit
             // 
