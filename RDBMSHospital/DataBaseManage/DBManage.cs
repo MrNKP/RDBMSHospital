@@ -15,6 +15,7 @@ namespace RDBMSHospital.DataBaseManage
             db = context;
         }
         //views
+        /*
         public List<ExtResult> GetExtResults()
         {
             var k = db.results.Select(p => new ExtResult
@@ -63,6 +64,7 @@ namespace RDBMSHospital.DataBaseManage
             });
             return k.ToList();
         }
+        */
         // patient
         public bool EditPatient(int id, string fn, string n, string fan, DateTime birth, int ss, int cs)
         {
@@ -159,7 +161,8 @@ namespace RDBMSHospital.DataBaseManage
         {
             if (qual != null && qual != "")
             {
-                doctor d = db.doctors.Where(e => (e.family_name == fn) && (e.name == n) && (e.father_name == fan) && (e.position == pos) && (e.qualification == Convert.ToInt32(qual))).FirstOrDefault();
+                int q = Convert.ToInt32(qual);
+                doctor d = db.doctors.Where(e => (e.family_name == fn) && (e.name == n) && (e.father_name == fan) && (e.position == pos) && (e.qualification == q)).FirstOrDefault();
                 if (d != null) return null;
                 else
                 {
@@ -168,7 +171,8 @@ namespace RDBMSHospital.DataBaseManage
                     d.name = n;
                     d.father_name = fan;
                     d.position = pos;
-                    d.qualification = Convert.ToInt32(qual);
+                    //d.qualification = Convert.ToInt32(qual);
+                    d.qualification = q;
                     db.doctors.Add(d);
                     db.SaveChanges();
                     return d;

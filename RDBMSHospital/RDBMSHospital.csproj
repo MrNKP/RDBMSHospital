@@ -57,35 +57,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataBaseManage\DBManage.cs" />
     <Compile Include="DataBase\current_status.cs" />
+    <Compile Include="DataBaseManage\DBManage.cs" />
     <Compile Include="DataBase\doctor.cs" />
-    <Compile Include="DataBase\doctor_position.cs" />
-    <Compile Include="DataBase\doctor_specialization.cs" />
-    <Compile Include="DataBase\doctor_to_specialization.cs" />
-    <Compile Include="DataBase\HospitalContext.cs" />
-    <Compile Include="DataBase\patient.cs" />
-    <Compile Include="DataBase\patient_doctor.cs" />
-    <Compile Include="DataBase\result.cs" />
-    <Compile Include="DataBase\social_status.cs" />
     <Compile Include="doctorEdit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="doctorEdit.Designer.cs">
       <DependentUpon>doctorEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataBase\doctor_position.cs" />
+    <Compile Include="DataBase\doctor_specialization.cs" />
+    <Compile Include="DataBase\doctor_to_specialization.cs" />
+    <Compile Include="DataBase\ExtDoctor.cs" />
+    <Compile Include="DataBase\ExtDoctorWithPos.cs" />
+    <Compile Include="DataBase\ExtDoctorWithSpec.cs" />
+    <Compile Include="DataBase\ExtPatient.cs" />
+    <Compile Include="DataBase\ExtPatientDoctor.cs" />
+    <Compile Include="DataBase\ExtResult.cs" />
+    <Compile Include="DataBase\HospitalContext.cs" />
+    <Compile Include="DataBase\patient.cs" />
     <Compile Include="patientEdit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="patientEdit.Designer.cs">
       <DependentUpon>patientEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataBase\patient_doctor.cs" />
+    <Compile Include="DataBase\result.cs" />
     <Compile Include="resultEdit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="resultEdit.Designer.cs">
       <DependentUpon>resultEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataBase\social_status.cs" />
     <Compile Include="startForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,12 +126,9 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\current_status.datasource" />
-    <None Include="Properties\DataSources\doctor.datasource" />
-    <None Include="Properties\DataSources\patient.datasource" />
-    <None Include="Properties\DataSources\RDBMSHospital.Views.ExtDoctor.datasource" />
-    <None Include="Properties\DataSources\RDBMSHospital.Views.ExtPatient.datasource" />
-    <None Include="Properties\DataSources\RDBMSHospital.Views.ExtResult.datasource" />
-    <None Include="Properties\DataSources\result.datasource" />
+    <None Include="Properties\DataSources\ExtDoctor.datasource" />
+    <None Include="Properties\DataSources\ExtPatient.datasource" />
+    <None Include="Properties\DataSources\ExtResult.datasource" />
     <None Include="Properties\DataSources\social_status.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

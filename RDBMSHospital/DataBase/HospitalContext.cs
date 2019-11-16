@@ -8,7 +8,7 @@ namespace RDBMSHospital
     public partial class HospitalContext : DbContext
     {
         public HospitalContext()
-            : base("name=HospitalContext1")
+            : base("name=HospitalContext")
         {
         }
 
@@ -21,6 +21,12 @@ namespace RDBMSHospital
         public virtual DbSet<patient_doctor> patient_doctor { get; set; }
         public virtual DbSet<result> results { get; set; }
         public virtual DbSet<social_status> social_status { get; set; }
+        public virtual DbSet<ExtDoctor> ExtDoctors { get; set; }
+        public virtual DbSet<ExtDoctorWithPos> ExtDoctorWithPos { get; set; }
+        public virtual DbSet<ExtDoctorWithSpec> ExtDoctorWithSpecs { get; set; }
+        public virtual DbSet<ExtPatient> ExtPatients { get; set; }
+        public virtual DbSet<ExtPatientDoctor> ExtPatientDoctors { get; set; }
+        public virtual DbSet<ExtResult> ExtResults { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -117,6 +123,138 @@ namespace RDBMSHospital
                 .WithRequired(e => e.social_status)
                 .HasForeignKey(e => e.soc_status)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<ExtDoctor>()
+                .Property(e => e.family_name)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ExtDoctor>()
+                .Property(e => e.name)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ExtDoctor>()
+                .Property(e => e.father_name)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ExtDoctor>()
+                .Property(e => e.position)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ExtDoctor>()
+                .Property(e => e.specialization)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ExtDoctorWithPos>()
+                .Property(e => e.family_name)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ExtDoctorWithPos>()
+                .Property(e => e.name)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ExtDoctorWithPos>()
+                .Property(e => e.father_name)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ExtDoctorWithPos>()
+                .Property(e => e.position)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ExtDoctorWithSpec>()
+                .Property(e => e.family_name)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ExtDoctorWithSpec>()
+                .Property(e => e.name)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ExtDoctorWithSpec>()
+                .Property(e => e.father_name)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ExtDoctorWithSpec>()
+                .Property(e => e.specialization)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ExtPatient>()
+                .Property(e => e.family_name)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ExtPatient>()
+                .Property(e => e.name)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ExtPatient>()
+                .Property(e => e.father_name)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ExtPatient>()
+                .Property(e => e.soc_status)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ExtPatient>()
+                .Property(e => e.curr_status)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ExtPatientDoctor>()
+                .Property(e => e.patientFamilyName)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ExtPatientDoctor>()
+                .Property(e => e.patientName)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ExtPatientDoctor>()
+                .Property(e => e.patientFatherName)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ExtPatientDoctor>()
+                .Property(e => e.doctorFamilyName)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ExtPatientDoctor>()
+                .Property(e => e.doctorName)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ExtPatientDoctor>()
+                .Property(e => e.doctorFatherName)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ExtPatientDoctor>()
+                .Property(e => e.position)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ExtPatientDoctor>()
+                .Property(e => e.specialization)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ExtResult>()
+                .Property(e => e.family_name)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ExtResult>()
+                .Property(e => e.name)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ExtResult>()
+                .Property(e => e.father_name)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ExtResult>()
+                .Property(e => e.Expr1)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ExtResult>()
+                .Property(e => e.Expr2)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ExtResult>()
+                .Property(e => e.Expr3)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ExtResult>()
+                .Property(e => e.diagnosis)
+                .IsUnicode(false);
         }
     }
 }

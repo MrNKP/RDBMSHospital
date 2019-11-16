@@ -26,7 +26,8 @@ namespace RDBMSHospital
         private void patientShowBtn_Click(object sender, EventArgs e)
         {
             //patiencesDataGridView.DataSource = db.patients.ToList();
-            patiencesDataGridView.DataSource = dbm.GetExtPatients();
+            //patiencesDataGridView.DataSource = dbm.GetExtPatients();
+            patiencesDataGridView.DataSource = db.ExtPatients.ToList();
         }
 
         private void patiencesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -45,7 +46,8 @@ namespace RDBMSHospital
                             MessageBox.Show("OK", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         else MessageBox.Show("Error", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         //patiencesDataGridView.DataSource = db.patients.ToList();
-                        patiencesDataGridView.DataSource = dbm.GetExtPatients();
+                        //patiencesDataGridView.DataSource = dbm.GetExtPatients();
+                        patiencesDataGridView.DataSource = db.ExtPatients.ToList();
                     }
                 }
             }
@@ -56,7 +58,8 @@ namespace RDBMSHospital
                     MessageBox.Show("OK", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else MessageBox.Show("Error", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 //patiencesDataGridView.DataSource = db.patients.ToList();
-                patiencesDataGridView.DataSource = dbm.GetExtPatients();
+                //patiencesDataGridView.DataSource = dbm.GetExtPatients();
+                patiencesDataGridView.DataSource = db.ExtPatients.ToList();
             }
         }
 
@@ -69,7 +72,8 @@ namespace RDBMSHospital
                     if (dbm.AddPatient(frm.familyNameTextBox.Text, frm.nameTextBox.Text, frm.fatherNameTextBox.Text, Convert.ToDateTime(frm.birthTextBox.Text), db.social_status.Where(p => p.soc_status.Equals(frm.socStatusComboBox.SelectedItem.ToString())).First().id, db.current_status.Where(p => p.curr_status.Equals(frm.currStatusComboBox.SelectedItem.ToString())).First().id) == null)
                         MessageBox.Show("Error", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     //patiencesDataGridView.DataSource = db.patients.ToList();
-                    patiencesDataGridView.DataSource = dbm.GetExtPatients();
+                    //patiencesDataGridView.DataSource = dbm.GetExtPatients();
+                    patiencesDataGridView.DataSource = db.ExtPatients.ToList();
                 }
             }
         }
@@ -77,8 +81,8 @@ namespace RDBMSHospital
         private void doctorsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int id = Convert.ToInt32(doctorsDataGridView.CurrentRow.Cells[0].Value);
-            //6.7
-            if (e.ColumnIndex == 6)
+            //7.8
+            if (e.ColumnIndex == 7)
             {
                 doctor locd = db.doctors.Find(id);
                 //Edit
@@ -90,25 +94,28 @@ namespace RDBMSHospital
                             MessageBox.Show("OK", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         else MessageBox.Show("Error", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         //doctorsDataGridView.DataSource = db.doctors.ToList();
-                        doctorsDataGridView.DataSource = dbm.GetExtDoctors();
+                        //doctorsDataGridView.DataSource = dbm.GetExtDoctors();
+                        doctorsDataGridView.DataSource = db.ExtDoctors.ToList();
                     }
                 }
             }
-            if (e.ColumnIndex == 7)
+            if (e.ColumnIndex == 8)
             {
                 //Delete
                 if (dbm.DeleteDoctor(id))
                     MessageBox.Show("OK", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else MessageBox.Show("Error", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 //doctorsDataGridView.DataSource = db.doctors.ToList();
-                doctorsDataGridView.DataSource = dbm.GetExtDoctors();
+                //doctorsDataGridView.DataSource = dbm.GetExtDoctors();
+                doctorsDataGridView.DataSource = db.ExtDoctors.ToList();
             }
         }
 
         private void doctorShowBtn_Click(object sender, EventArgs e)
         {
             //doctorsDataGridView.DataSource = db.doctors.ToList();
-            doctorsDataGridView.DataSource = dbm.GetExtDoctors();
+            //doctorsDataGridView.DataSource = dbm.GetExtDoctors();
+            doctorsDataGridView.DataSource = db.ExtDoctors.ToList();
         }
 
         private void doctorAddBtn_Click(object sender, EventArgs e)
@@ -120,7 +127,8 @@ namespace RDBMSHospital
                     if (dbm.AddDoctor(frm.familyNameTextBox.Text, frm.nameTextBox.Text, frm.fatherNameTextBox.Text, db.doctor_position.Where(p => p.position.Equals(frm.posComboBox.SelectedItem.ToString())).First().id, frm.qualifTextBox.Text) == null)
                         MessageBox.Show("Error", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     //doctorsDataGridView.DataSource = db.doctors.ToList();
-                    doctorsDataGridView.DataSource = dbm.GetExtDoctors();
+                    //doctorsDataGridView.DataSource = dbm.GetExtDoctors();
+                    doctorsDataGridView.DataSource = db.ExtDoctors.ToList();
                 }
             }
         }
@@ -128,7 +136,8 @@ namespace RDBMSHospital
         private void resultShowBtn_Click(object sender, EventArgs e)
         {
             //resultDataGridView.DataSource = db.results.ToList();
-            resultDataGridView.DataSource = dbm.GetExtResults();
+            //resultDataGridView.DataSource = dbm.GetExtResults();
+            resultDataGridView.DataSource = db.ExtResults.ToList();
         }
 
         private void resultDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -168,7 +177,8 @@ namespace RDBMSHospital
                             MessageBox.Show("OK", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         else MessageBox.Show("Error", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         //resultDataGridView.DataSource = db.results.ToList();
-                        resultDataGridView.DataSource = dbm.GetExtResults();
+                        //resultDataGridView.DataSource = dbm.GetExtResults();
+                        resultDataGridView.DataSource = db.ExtResults.ToList();
                     }
                 }
             }
@@ -179,7 +189,8 @@ namespace RDBMSHospital
                     MessageBox.Show("OK", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else MessageBox.Show("Error", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 //resultDataGridView.DataSource = db.results.ToList();
-                resultDataGridView.DataSource = dbm.GetExtResults();
+                //resultDataGridView.DataSource = dbm.GetExtResults();
+                resultDataGridView.DataSource = db.ExtResults.ToList();
             }
         }
 
@@ -213,7 +224,8 @@ namespace RDBMSHospital
                     if (dbm.AddResult(p.id, d.id, frm.diagnosisTextBox.Text, frm.outpatientCheckBox.Checked, Convert.ToInt32(frm.countDaysTextBox.Text), frm.clinicalAccountCheckBox.Checked, Convert.ToDateTime(frm.startDateTextBox.Text), Convert.ToDateTime(frm.predictedDateTextBox.Text), frm.factDateTextBox.Text) == null)
                         MessageBox.Show("Error", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     //resultDataGridView.DataSource = db.results.ToList();
-                    resultDataGridView.DataSource = dbm.GetExtResults();
+                    //resultDataGridView.DataSource = dbm.GetExtResults();
+                    resultDataGridView.DataSource = db.ExtResults.ToList();
                 }
             }
         }

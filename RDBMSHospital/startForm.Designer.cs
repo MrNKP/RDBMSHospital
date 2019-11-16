@@ -45,34 +45,34 @@
             this.resultDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewLinkColumn1 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.dataGridViewLinkColumn2 = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.resultEdit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.resultDelete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.family_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.father_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bitrh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soc_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cur_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.extPatientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.familynameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fathernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bitrhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.socstatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.currstatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EditPatient = new System.Windows.Forms.DataGridViewButtonColumn();
             this.DeletePatient = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.EditDoctor = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.DeleteDoctor = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.extPatientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.extDoctorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.familyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fatherNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.familynameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fathernameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.positionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qualificationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.extDoctorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.specializationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EditDoctor = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.DeleteDoctor = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.extResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.patientFamilyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.patientNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.patientFatherNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.doctorFamilyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.doctorNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.doctorFatherNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.familynameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fathernameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.expr1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.expr2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.expr3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diagnosisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.outpatienttreatmentDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.countwithoutworkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,11 +80,8 @@
             this.startDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.predictedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.factDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.extResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.doctorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.resultBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.socialstatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.resultEdit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.resultDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataBaseTabControl.SuspendLayout();
             this.patientsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patiencesDataGridView)).BeginInit();
@@ -95,10 +92,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.extPatientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.extDoctorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.extResultBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.resultBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.socialstatusBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataBaseTabControl
@@ -151,12 +144,12 @@
             this.patiencesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.patiencesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
-            this.family_name,
-            this.name,
-            this.father_name,
-            this.bitrh,
-            this.soc_status,
-            this.cur_status,
+            this.familynameDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.fathernameDataGridViewTextBoxColumn,
+            this.bitrhDataGridViewTextBoxColumn,
+            this.socstatusDataGridViewTextBoxColumn,
+            this.currstatusDataGridViewTextBoxColumn,
             this.EditPatient,
             this.DeletePatient});
             this.patiencesDataGridView.DataSource = this.extPatientBindingSource;
@@ -207,11 +200,12 @@
             this.doctorsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.doctorsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn1,
-            this.familyNameDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.fatherNameDataGridViewTextBoxColumn,
+            this.familynameDataGridViewTextBoxColumn1,
+            this.nameDataGridViewTextBoxColumn1,
+            this.fathernameDataGridViewTextBoxColumn1,
             this.positionDataGridViewTextBoxColumn,
             this.qualificationDataGridViewTextBoxColumn,
+            this.specializationDataGridViewTextBoxColumn,
             this.EditDoctor,
             this.DeleteDoctor});
             this.doctorsDataGridView.DataSource = this.extDoctorBindingSource;
@@ -262,12 +256,12 @@
             this.resultDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.resultDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn2,
-            this.patientFamilyNameDataGridViewTextBoxColumn,
-            this.patientNameDataGridViewTextBoxColumn,
-            this.patientFatherNameDataGridViewTextBoxColumn,
-            this.doctorFamilyNameDataGridViewTextBoxColumn,
-            this.doctorNameDataGridViewTextBoxColumn,
-            this.doctorFatherNameDataGridViewTextBoxColumn,
+            this.familynameDataGridViewTextBoxColumn2,
+            this.nameDataGridViewTextBoxColumn2,
+            this.fathernameDataGridViewTextBoxColumn2,
+            this.expr1DataGridViewTextBoxColumn,
+            this.expr2DataGridViewTextBoxColumn,
+            this.expr3DataGridViewTextBoxColumn,
             this.diagnosisDataGridViewTextBoxColumn,
             this.outpatienttreatmentDataGridViewCheckBoxColumn,
             this.countwithoutworkDataGridViewTextBoxColumn,
@@ -298,66 +292,59 @@
             this.dataGridViewLinkColumn2.HeaderText = "current_status";
             this.dataGridViewLinkColumn2.Name = "dataGridViewLinkColumn2";
             // 
-            // resultEdit
+            // extPatientBindingSource
             // 
-            this.resultEdit.HeaderText = "";
-            this.resultEdit.Name = "resultEdit";
-            this.resultEdit.ReadOnly = true;
-            this.resultEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.resultEdit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.resultEdit.Text = "Edit";
-            this.resultEdit.UseColumnTextForButtonValue = true;
+            this.extPatientBindingSource.DataSource = typeof(RDBMSHospital.ExtPatient);
             // 
-            // resultDelete
+            // idDataGridViewTextBoxColumn
             // 
-            this.resultDelete.HeaderText = "";
-            this.resultDelete.Name = "resultDelete";
-            this.resultDelete.ReadOnly = true;
-            this.resultDelete.Text = "Delete";
-            this.resultDelete.UseColumnTextForButtonValue = true;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
             // 
-            // family_name
+            // familynameDataGridViewTextBoxColumn
             // 
-            this.family_name.DataPropertyName = "familyName";
-            this.family_name.HeaderText = "familyName";
-            this.family_name.Name = "family_name";
-            this.family_name.ReadOnly = true;
+            this.familynameDataGridViewTextBoxColumn.DataPropertyName = "family_name";
+            this.familynameDataGridViewTextBoxColumn.HeaderText = "family_name";
+            this.familynameDataGridViewTextBoxColumn.Name = "familynameDataGridViewTextBoxColumn";
+            this.familynameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // name
+            // nameDataGridViewTextBoxColumn
             // 
-            this.name.DataPropertyName = "name";
-            this.name.HeaderText = "name";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // father_name
+            // fathernameDataGridViewTextBoxColumn
             // 
-            this.father_name.DataPropertyName = "fatherName";
-            this.father_name.HeaderText = "fatherName";
-            this.father_name.Name = "father_name";
-            this.father_name.ReadOnly = true;
+            this.fathernameDataGridViewTextBoxColumn.DataPropertyName = "father_name";
+            this.fathernameDataGridViewTextBoxColumn.HeaderText = "father_name";
+            this.fathernameDataGridViewTextBoxColumn.Name = "fathernameDataGridViewTextBoxColumn";
+            this.fathernameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // bitrh
+            // bitrhDataGridViewTextBoxColumn
             // 
-            this.bitrh.DataPropertyName = "birth";
-            this.bitrh.HeaderText = "birth";
-            this.bitrh.Name = "bitrh";
-            this.bitrh.ReadOnly = true;
+            this.bitrhDataGridViewTextBoxColumn.DataPropertyName = "bitrh";
+            this.bitrhDataGridViewTextBoxColumn.HeaderText = "bitrh";
+            this.bitrhDataGridViewTextBoxColumn.Name = "bitrhDataGridViewTextBoxColumn";
+            this.bitrhDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // soc_status
+            // socstatusDataGridViewTextBoxColumn
             // 
-            this.soc_status.DataPropertyName = "soc_status";
-            this.soc_status.HeaderText = "soc_status";
-            this.soc_status.Name = "soc_status";
-            this.soc_status.ReadOnly = true;
-            this.soc_status.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.socstatusDataGridViewTextBoxColumn.DataPropertyName = "soc_status";
+            this.socstatusDataGridViewTextBoxColumn.HeaderText = "soc_status";
+            this.socstatusDataGridViewTextBoxColumn.Name = "socstatusDataGridViewTextBoxColumn";
+            this.socstatusDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // cur_status
+            // currstatusDataGridViewTextBoxColumn
             // 
-            this.cur_status.DataPropertyName = "curr_status";
-            this.cur_status.HeaderText = "curr_status";
-            this.cur_status.Name = "cur_status";
-            this.cur_status.ReadOnly = true;
+            this.currstatusDataGridViewTextBoxColumn.DataPropertyName = "curr_status";
+            this.currstatusDataGridViewTextBoxColumn.HeaderText = "curr_status";
+            this.currstatusDataGridViewTextBoxColumn.Name = "currstatusDataGridViewTextBoxColumn";
+            this.currstatusDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // EditPatient
             // 
@@ -375,6 +362,60 @@
             this.DeletePatient.Text = "Delete";
             this.DeletePatient.UseColumnTextForButtonValue = true;
             // 
+            // extDoctorBindingSource
+            // 
+            this.extDoctorBindingSource.DataSource = typeof(RDBMSHospital.ExtDoctor);
+            // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // familynameDataGridViewTextBoxColumn1
+            // 
+            this.familynameDataGridViewTextBoxColumn1.DataPropertyName = "family_name";
+            this.familynameDataGridViewTextBoxColumn1.HeaderText = "family_name";
+            this.familynameDataGridViewTextBoxColumn1.Name = "familynameDataGridViewTextBoxColumn1";
+            this.familynameDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn1
+            // 
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // fathernameDataGridViewTextBoxColumn1
+            // 
+            this.fathernameDataGridViewTextBoxColumn1.DataPropertyName = "father_name";
+            this.fathernameDataGridViewTextBoxColumn1.HeaderText = "father_name";
+            this.fathernameDataGridViewTextBoxColumn1.Name = "fathernameDataGridViewTextBoxColumn1";
+            this.fathernameDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // positionDataGridViewTextBoxColumn
+            // 
+            this.positionDataGridViewTextBoxColumn.DataPropertyName = "position";
+            this.positionDataGridViewTextBoxColumn.HeaderText = "position";
+            this.positionDataGridViewTextBoxColumn.Name = "positionDataGridViewTextBoxColumn";
+            this.positionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // qualificationDataGridViewTextBoxColumn
+            // 
+            this.qualificationDataGridViewTextBoxColumn.DataPropertyName = "qualification";
+            this.qualificationDataGridViewTextBoxColumn.HeaderText = "qualification";
+            this.qualificationDataGridViewTextBoxColumn.Name = "qualificationDataGridViewTextBoxColumn";
+            this.qualificationDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // specializationDataGridViewTextBoxColumn
+            // 
+            this.specializationDataGridViewTextBoxColumn.DataPropertyName = "specialization";
+            this.specializationDataGridViewTextBoxColumn.HeaderText = "specialization";
+            this.specializationDataGridViewTextBoxColumn.Name = "specializationDataGridViewTextBoxColumn";
+            this.specializationDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // EditDoctor
             // 
             this.EditDoctor.HeaderText = "";
@@ -391,62 +432,9 @@
             this.DeleteDoctor.Text = "Delete";
             this.DeleteDoctor.UseColumnTextForButtonValue = true;
             // 
-            // idDataGridViewTextBoxColumn
+            // extResultBindingSource
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // extPatientBindingSource
-            // 
-            this.extPatientBindingSource.DataSource = typeof(RDBMSHospital.Views.ExtPatient);
-            // 
-            // idDataGridViewTextBoxColumn1
-            // 
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // familyNameDataGridViewTextBoxColumn
-            // 
-            this.familyNameDataGridViewTextBoxColumn.DataPropertyName = "familyName";
-            this.familyNameDataGridViewTextBoxColumn.HeaderText = "familyName";
-            this.familyNameDataGridViewTextBoxColumn.Name = "familyNameDataGridViewTextBoxColumn";
-            this.familyNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fatherNameDataGridViewTextBoxColumn
-            // 
-            this.fatherNameDataGridViewTextBoxColumn.DataPropertyName = "fatherName";
-            this.fatherNameDataGridViewTextBoxColumn.HeaderText = "fatherName";
-            this.fatherNameDataGridViewTextBoxColumn.Name = "fatherNameDataGridViewTextBoxColumn";
-            this.fatherNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // positionDataGridViewTextBoxColumn
-            // 
-            this.positionDataGridViewTextBoxColumn.DataPropertyName = "position";
-            this.positionDataGridViewTextBoxColumn.HeaderText = "position";
-            this.positionDataGridViewTextBoxColumn.Name = "positionDataGridViewTextBoxColumn";
-            this.positionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // qualificationDataGridViewTextBoxColumn
-            // 
-            this.qualificationDataGridViewTextBoxColumn.DataPropertyName = "qualification";
-            this.qualificationDataGridViewTextBoxColumn.HeaderText = "qualification";
-            this.qualificationDataGridViewTextBoxColumn.Name = "qualificationDataGridViewTextBoxColumn";
-            this.qualificationDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // extDoctorBindingSource
-            // 
-            this.extDoctorBindingSource.DataSource = typeof(RDBMSHospital.Views.ExtDoctor);
+            this.extResultBindingSource.DataSource = typeof(RDBMSHospital.ExtResult);
             // 
             // idDataGridViewTextBoxColumn2
             // 
@@ -454,48 +442,49 @@
             this.idDataGridViewTextBoxColumn2.HeaderText = "id";
             this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
             this.idDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn2.Visible = false;
             // 
-            // patientFamilyNameDataGridViewTextBoxColumn
+            // familynameDataGridViewTextBoxColumn2
             // 
-            this.patientFamilyNameDataGridViewTextBoxColumn.DataPropertyName = "patientFamilyName";
-            this.patientFamilyNameDataGridViewTextBoxColumn.HeaderText = "patientFamilyName";
-            this.patientFamilyNameDataGridViewTextBoxColumn.Name = "patientFamilyNameDataGridViewTextBoxColumn";
-            this.patientFamilyNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.familynameDataGridViewTextBoxColumn2.DataPropertyName = "family_name";
+            this.familynameDataGridViewTextBoxColumn2.HeaderText = "family_name";
+            this.familynameDataGridViewTextBoxColumn2.Name = "familynameDataGridViewTextBoxColumn2";
+            this.familynameDataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // patientNameDataGridViewTextBoxColumn
+            // nameDataGridViewTextBoxColumn2
             // 
-            this.patientNameDataGridViewTextBoxColumn.DataPropertyName = "patientName";
-            this.patientNameDataGridViewTextBoxColumn.HeaderText = "patientName";
-            this.patientNameDataGridViewTextBoxColumn.Name = "patientNameDataGridViewTextBoxColumn";
-            this.patientNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn2.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn2.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn2.Name = "nameDataGridViewTextBoxColumn2";
+            this.nameDataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // patientFatherNameDataGridViewTextBoxColumn
+            // fathernameDataGridViewTextBoxColumn2
             // 
-            this.patientFatherNameDataGridViewTextBoxColumn.DataPropertyName = "patientFatherName";
-            this.patientFatherNameDataGridViewTextBoxColumn.HeaderText = "patientFatherName";
-            this.patientFatherNameDataGridViewTextBoxColumn.Name = "patientFatherNameDataGridViewTextBoxColumn";
-            this.patientFatherNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fathernameDataGridViewTextBoxColumn2.DataPropertyName = "father_name";
+            this.fathernameDataGridViewTextBoxColumn2.HeaderText = "father_name";
+            this.fathernameDataGridViewTextBoxColumn2.Name = "fathernameDataGridViewTextBoxColumn2";
+            this.fathernameDataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // doctorFamilyNameDataGridViewTextBoxColumn
+            // expr1DataGridViewTextBoxColumn
             // 
-            this.doctorFamilyNameDataGridViewTextBoxColumn.DataPropertyName = "doctorFamilyName";
-            this.doctorFamilyNameDataGridViewTextBoxColumn.HeaderText = "doctorFamilyName";
-            this.doctorFamilyNameDataGridViewTextBoxColumn.Name = "doctorFamilyNameDataGridViewTextBoxColumn";
-            this.doctorFamilyNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.expr1DataGridViewTextBoxColumn.DataPropertyName = "Expr1";
+            this.expr1DataGridViewTextBoxColumn.HeaderText = "Expr1";
+            this.expr1DataGridViewTextBoxColumn.Name = "expr1DataGridViewTextBoxColumn";
+            this.expr1DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // doctorNameDataGridViewTextBoxColumn
+            // expr2DataGridViewTextBoxColumn
             // 
-            this.doctorNameDataGridViewTextBoxColumn.DataPropertyName = "doctorName";
-            this.doctorNameDataGridViewTextBoxColumn.HeaderText = "doctorName";
-            this.doctorNameDataGridViewTextBoxColumn.Name = "doctorNameDataGridViewTextBoxColumn";
-            this.doctorNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.expr2DataGridViewTextBoxColumn.DataPropertyName = "Expr2";
+            this.expr2DataGridViewTextBoxColumn.HeaderText = "Expr2";
+            this.expr2DataGridViewTextBoxColumn.Name = "expr2DataGridViewTextBoxColumn";
+            this.expr2DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // doctorFatherNameDataGridViewTextBoxColumn
+            // expr3DataGridViewTextBoxColumn
             // 
-            this.doctorFatherNameDataGridViewTextBoxColumn.DataPropertyName = "doctorFatherName";
-            this.doctorFatherNameDataGridViewTextBoxColumn.HeaderText = "doctorFatherName";
-            this.doctorFatherNameDataGridViewTextBoxColumn.Name = "doctorFatherNameDataGridViewTextBoxColumn";
-            this.doctorFatherNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.expr3DataGridViewTextBoxColumn.DataPropertyName = "Expr3";
+            this.expr3DataGridViewTextBoxColumn.HeaderText = "Expr3";
+            this.expr3DataGridViewTextBoxColumn.Name = "expr3DataGridViewTextBoxColumn";
+            this.expr3DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // diagnosisDataGridViewTextBoxColumn
             // 
@@ -546,25 +535,23 @@
             this.factDataGridViewTextBoxColumn.Name = "factDataGridViewTextBoxColumn";
             this.factDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // extResultBindingSource
+            // resultEdit
             // 
-            this.extResultBindingSource.DataSource = typeof(RDBMSHospital.Views.ExtResult);
+            this.resultEdit.HeaderText = "";
+            this.resultEdit.Name = "resultEdit";
+            this.resultEdit.ReadOnly = true;
+            this.resultEdit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.resultEdit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.resultEdit.Text = "Edit";
+            this.resultEdit.UseColumnTextForButtonValue = true;
             // 
-            // doctorBindingSource
+            // resultDelete
             // 
-            this.doctorBindingSource.DataSource = typeof(RDBMSHospital.doctor);
-            // 
-            // patientBindingSource
-            // 
-            this.patientBindingSource.DataSource = typeof(RDBMSHospital.patient);
-            // 
-            // resultBindingSource
-            // 
-            this.resultBindingSource.DataSource = typeof(RDBMSHospital.result);
-            // 
-            // socialstatusBindingSource
-            // 
-            this.socialstatusBindingSource.DataSource = typeof(RDBMSHospital.social_status);
+            this.resultDelete.HeaderText = "";
+            this.resultDelete.Name = "resultDelete";
+            this.resultDelete.ReadOnly = true;
+            this.resultDelete.Text = "Delete";
+            this.resultDelete.UseColumnTextForButtonValue = true;
             // 
             // startForm
             // 
@@ -587,10 +574,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.extPatientBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.extDoctorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.extResultBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.resultBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.socialstatusBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -610,19 +593,35 @@
         private System.Windows.Forms.Button resultAddBtn;
         private System.Windows.Forms.Button resultShowBtn;
         private System.Windows.Forms.DataGridView resultDataGridView;
-        private System.Windows.Forms.BindingSource patientBindingSource;
-        private System.Windows.Forms.BindingSource socialstatusBindingSource;
         private System.Windows.Forms.DataGridViewLinkColumn dataGridViewLinkColumn1;
         private System.Windows.Forms.DataGridViewLinkColumn dataGridViewLinkColumn2;
-        private System.Windows.Forms.BindingSource doctorBindingSource;
-        private System.Windows.Forms.BindingSource resultBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn familynameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fathernameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bitrhDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn socstatusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn currstatusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn EditPatient;
+        private System.Windows.Forms.DataGridViewButtonColumn DeletePatient;
+        private System.Windows.Forms.BindingSource extPatientBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn familynameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fathernameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn positionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qualificationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn specializationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn EditDoctor;
+        private System.Windows.Forms.DataGridViewButtonColumn DeleteDoctor;
+        private System.Windows.Forms.BindingSource extDoctorBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn patientFamilyNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn patientNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn patientFatherNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn doctorFamilyNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn doctorNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn doctorFatherNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn familynameDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fathernameDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn expr1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn expr2DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn expr3DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn diagnosisDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn outpatienttreatmentDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn countwithoutworkDataGridViewTextBoxColumn;
@@ -633,25 +632,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn resultEdit;
         private System.Windows.Forms.DataGridViewButtonColumn resultDelete;
         private System.Windows.Forms.BindingSource extResultBindingSource;
-        private System.Windows.Forms.BindingSource extPatientBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn family_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn father_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bitrh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn soc_status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cur_status;
-        private System.Windows.Forms.DataGridViewButtonColumn EditPatient;
-        private System.Windows.Forms.DataGridViewButtonColumn DeletePatient;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn familyNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fatherNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn positionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qualificationDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn EditDoctor;
-        private System.Windows.Forms.DataGridViewButtonColumn DeleteDoctor;
-        private System.Windows.Forms.BindingSource extDoctorBindingSource;
     }
 }
 
