@@ -16,9 +16,43 @@ namespace RDBMSHospital
     {
         HospitalContext db;
         DBManage dbm;
+        string loggerUser;
+        string loggerRole;
         public startForm()
         {
             InitializeComponent();
+            db = new HospitalContext();
+            dbm = new DBManage(db);
+            loggerUser = "Guest";
+            loggerRole = "Patient";
+        }
+        public startForm(string locLoggedUser, string locLoggedRole)
+        {
+            InitializeComponent();
+            db = new HospitalContext();
+            dbm = new DBManage(db);
+            loggerUser = locLoggedUser;
+            loggerRole = locLoggedRole;
+            this.Text = "View DataBase --- " + loggerUser + " --- " + loggerRole;
+            if (loggerRole != "Admin")
+            {
+                patientAddBtn.Visible = false;
+                doctorAddBtn.Visible = false;
+                resultAddBtn.Visible = false;
+                EditPatient.Visible = false;
+                DeletePatient.Visible = false;
+                EditDoctor.Visible = false;
+                DeleteDoctor.Visible = false;
+                resultEdit.Visible = false;
+                resultDelete.Visible = false;
+            }
+            if (loggerRole == "Doctor")
+            {
+                resultAddBtn.Visible = true;
+            }
+        }
+        private void reloadData()
+        {
             db = new HospitalContext();
             dbm = new DBManage(db);
         }
@@ -27,6 +61,7 @@ namespace RDBMSHospital
         {
             //patiencesDataGridView.DataSource = db.patients.ToList();
             //patiencesDataGridView.DataSource = dbm.GetExtPatients();
+            reloadData();
             patiencesDataGridView.DataSource = db.ExtPatients.ToList();
         }
 
@@ -47,6 +82,7 @@ namespace RDBMSHospital
                         else MessageBox.Show("Error", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         //patiencesDataGridView.DataSource = db.patients.ToList();
                         //patiencesDataGridView.DataSource = dbm.GetExtPatients();
+                        reloadData();
                         patiencesDataGridView.DataSource = db.ExtPatients.ToList();
                     }
                 }
@@ -59,6 +95,7 @@ namespace RDBMSHospital
                 else MessageBox.Show("Error", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 //patiencesDataGridView.DataSource = db.patients.ToList();
                 //patiencesDataGridView.DataSource = dbm.GetExtPatients();
+                reloadData();
                 patiencesDataGridView.DataSource = db.ExtPatients.ToList();
             }
         }
@@ -73,6 +110,7 @@ namespace RDBMSHospital
                         MessageBox.Show("Error", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     //patiencesDataGridView.DataSource = db.patients.ToList();
                     //patiencesDataGridView.DataSource = dbm.GetExtPatients();
+                    reloadData();
                     patiencesDataGridView.DataSource = db.ExtPatients.ToList();
                 }
             }
@@ -95,6 +133,7 @@ namespace RDBMSHospital
                         else MessageBox.Show("Error", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         //doctorsDataGridView.DataSource = db.doctors.ToList();
                         //doctorsDataGridView.DataSource = dbm.GetExtDoctors();
+                        reloadData();
                         doctorsDataGridView.DataSource = db.ExtDoctors.ToList();
                     }
                 }
@@ -107,6 +146,7 @@ namespace RDBMSHospital
                 else MessageBox.Show("Error", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 //doctorsDataGridView.DataSource = db.doctors.ToList();
                 //doctorsDataGridView.DataSource = dbm.GetExtDoctors();
+                reloadData();
                 doctorsDataGridView.DataSource = db.ExtDoctors.ToList();
             }
         }
@@ -115,6 +155,7 @@ namespace RDBMSHospital
         {
             //doctorsDataGridView.DataSource = db.doctors.ToList();
             //doctorsDataGridView.DataSource = dbm.GetExtDoctors();
+            reloadData();
             doctorsDataGridView.DataSource = db.ExtDoctors.ToList();
         }
 
@@ -128,6 +169,7 @@ namespace RDBMSHospital
                         MessageBox.Show("Error", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     //doctorsDataGridView.DataSource = db.doctors.ToList();
                     //doctorsDataGridView.DataSource = dbm.GetExtDoctors();
+                    reloadData();
                     doctorsDataGridView.DataSource = db.ExtDoctors.ToList();
                 }
             }
@@ -137,6 +179,7 @@ namespace RDBMSHospital
         {
             //resultDataGridView.DataSource = db.results.ToList();
             //resultDataGridView.DataSource = dbm.GetExtResults();
+            reloadData();
             resultDataGridView.DataSource = db.ExtResults.ToList();
         }
 
@@ -178,6 +221,7 @@ namespace RDBMSHospital
                         else MessageBox.Show("Error", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         //resultDataGridView.DataSource = db.results.ToList();
                         //resultDataGridView.DataSource = dbm.GetExtResults();
+                        reloadData();
                         resultDataGridView.DataSource = db.ExtResults.ToList();
                     }
                 }
@@ -190,6 +234,7 @@ namespace RDBMSHospital
                 else MessageBox.Show("Error", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 //resultDataGridView.DataSource = db.results.ToList();
                 //resultDataGridView.DataSource = dbm.GetExtResults();
+                reloadData();
                 resultDataGridView.DataSource = db.ExtResults.ToList();
             }
         }
@@ -225,6 +270,7 @@ namespace RDBMSHospital
                         MessageBox.Show("Error", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     //resultDataGridView.DataSource = db.results.ToList();
                     //resultDataGridView.DataSource = dbm.GetExtResults();
+                    reloadData();
                     resultDataGridView.DataSource = db.ExtResults.ToList();
                 }
             }

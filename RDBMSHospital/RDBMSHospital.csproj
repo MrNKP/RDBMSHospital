@@ -77,6 +77,13 @@
     <Compile Include="DataBase\ExtResult.cs" />
     <Compile Include="DataBase\HospitalContext.cs" />
     <Compile Include="DataBase\patient.cs" />
+    <Compile Include="LoginDataBase\LoginContext.cs" />
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="patientEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +99,7 @@
       <DependentUpon>resultEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="DataBase\social_status.cs" />
+    <Compile Include="LoginDataBase\Role.cs" />
     <Compile Include="startForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,11 +108,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="LoginDataBase\User.cs" />
     <Compile Include="Views\ExtDoctor.cs" />
     <Compile Include="Views\ExtPatient.cs" />
     <Compile Include="Views\ExtResult.cs" />
     <EmbeddedResource Include="doctorEdit.resx">
       <DependentUpon>doctorEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="patientEdit.resx">
       <DependentUpon>patientEdit.cs</DependentUpon>
