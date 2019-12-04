@@ -50,6 +50,13 @@ namespace RDBMSHospital
             {
                 resultAddBtn.Visible = true;
             }
+            if (loggerRole == "Patient")
+            {
+                patientShowBtn.Visible = false;
+                //patiencesDataGridView.DataSource = null;
+                resultShowBtn.Visible = false;
+                //resultDataGridView.DataSource = null;
+            }
         }
         private void reloadData()
         {

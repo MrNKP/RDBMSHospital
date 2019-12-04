@@ -42,7 +42,7 @@
             this.loginBtn.Location = new System.Drawing.Point(12, 68);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.Size = new System.Drawing.Size(139, 38);
-            this.loginBtn.TabIndex = 0;
+            this.loginBtn.TabIndex = 2;
             this.loginBtn.Text = "Log In";
             this.loginBtn.UseVisualStyleBackColor = true;
             this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
@@ -52,7 +52,7 @@
             this.usernameTextBox.Location = new System.Drawing.Point(103, 12);
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(188, 22);
-            this.usernameTextBox.TabIndex = 1;
+            this.usernameTextBox.TabIndex = 0;
             // 
             // usernameLbl
             // 
@@ -69,7 +69,7 @@
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(188, 22);
-            this.passwordTextBox.TabIndex = 3;
+            this.passwordTextBox.TabIndex = 1;
             // 
             // passwordLbl
             // 
@@ -85,7 +85,7 @@
             this.clearBtn.Location = new System.Drawing.Point(157, 68);
             this.clearBtn.Name = "clearBtn";
             this.clearBtn.Size = new System.Drawing.Size(134, 38);
-            this.clearBtn.TabIndex = 5;
+            this.clearBtn.TabIndex = 3;
             this.clearBtn.Text = "Clear";
             this.clearBtn.UseVisualStyleBackColor = true;
             this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
