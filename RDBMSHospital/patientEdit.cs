@@ -23,6 +23,7 @@ namespace RDBMSHospital
             List<string> curS = new List<string>();
             for (int i = 0; i < db.current_status.ToList().Count; i++) curS.Add(db.current_status.ToList()[i].curr_status);
             currStatusComboBox.DataSource = curS;
+            birthDateTimePicker.MaxDate = DateTime.Now;
         }
         public patientEdit(patient np)
         {
@@ -31,7 +32,9 @@ namespace RDBMSHospital
             familyNameTextBox.Text = p.family_name;
             nameTextBox.Text = p.name;
             fatherNameTextBox.Text = p.father_name;
-            birthTextBox.Text = Convert.ToString(p.bitrh);
+            //birthTextBox.Text = Convert.ToString(p.bitrh);
+            birthDateTimePicker.MaxDate = DateTime.Now;
+            birthDateTimePicker.Value = p.bitrh;
             //socStatusTextBox.Text = p.social_status.soc_status;
             //currStatusTextBox.Text = p.current_status.curr_status;
             List<string> socS = new List<string>();

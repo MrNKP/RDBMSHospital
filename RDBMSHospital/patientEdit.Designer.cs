@@ -34,7 +34,6 @@
             this.familyNameTextBox = new System.Windows.Forms.TextBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.fatherNameTextBox = new System.Windows.Forms.TextBox();
-            this.birthTextBox = new System.Windows.Forms.TextBox();
             this.fatherNameLbl = new System.Windows.Forms.Label();
             this.birthLbl = new System.Windows.Forms.Label();
             this.socStatusLbl = new System.Windows.Forms.Label();
@@ -43,6 +42,7 @@
             this.cancelBtn = new System.Windows.Forms.Button();
             this.socStatusComboBox = new System.Windows.Forms.ComboBox();
             this.currStatusComboBox = new System.Windows.Forms.ComboBox();
+            this.birthDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // familyNameLbl
@@ -83,13 +83,6 @@
             this.fatherNameTextBox.Name = "fatherNameTextBox";
             this.fatherNameTextBox.Size = new System.Drawing.Size(352, 22);
             this.fatherNameTextBox.TabIndex = 3;
-            // 
-            // birthTextBox
-            // 
-            this.birthTextBox.Location = new System.Drawing.Point(132, 90);
-            this.birthTextBox.Name = "birthTextBox";
-            this.birthTextBox.Size = new System.Drawing.Size(352, 22);
-            this.birthTextBox.TabIndex = 4;
             // 
             // fatherNameLbl
             // 
@@ -163,6 +156,13 @@
             this.currStatusComboBox.Size = new System.Drawing.Size(352, 24);
             this.currStatusComboBox.TabIndex = 6;
             // 
+            // birthDateTimePicker
+            // 
+            this.birthDateTimePicker.Location = new System.Drawing.Point(132, 90);
+            this.birthDateTimePicker.Name = "birthDateTimePicker";
+            this.birthDateTimePicker.Size = new System.Drawing.Size(352, 22);
+            this.birthDateTimePicker.TabIndex = 12;
+            // 
             // patientEdit
             // 
             this.AcceptButton = this.acceptBtn;
@@ -171,6 +171,7 @@
             this.CancelButton = this.cancelBtn;
             this.ClientSize = new System.Drawing.Size(494, 296);
             this.ControlBox = false;
+            this.Controls.Add(this.birthDateTimePicker);
             this.Controls.Add(this.currStatusComboBox);
             this.Controls.Add(this.socStatusComboBox);
             this.Controls.Add(this.cancelBtn);
@@ -179,7 +180,6 @@
             this.Controls.Add(this.socStatusLbl);
             this.Controls.Add(this.birthLbl);
             this.Controls.Add(this.fatherNameLbl);
-            this.Controls.Add(this.birthTextBox);
             this.Controls.Add(this.fatherNameTextBox);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.familyNameTextBox);
@@ -201,7 +201,6 @@
         public System.Windows.Forms.TextBox familyNameTextBox;
         public System.Windows.Forms.TextBox nameTextBox;
         public System.Windows.Forms.TextBox fatherNameTextBox;
-        public System.Windows.Forms.TextBox birthTextBox;
         private System.Windows.Forms.Label fatherNameLbl;
         private System.Windows.Forms.Label birthLbl;
         private System.Windows.Forms.Label socStatusLbl;
@@ -210,5 +209,6 @@
         private System.Windows.Forms.Button cancelBtn;
         public System.Windows.Forms.ComboBox socStatusComboBox;
         public System.Windows.Forms.ComboBox currStatusComboBox;
+        public System.Windows.Forms.DateTimePicker birthDateTimePicker;
     }
 }

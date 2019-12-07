@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
 using RDBMSHospital.DataBaseManage;
+using System.Text.RegularExpressions;
 
 namespace RDBMSHospital
 {
@@ -58,6 +59,49 @@ namespace RDBMSHospital
                 //resultDataGridView.DataSource = null;
             }
         }
+
+        private string cutSpacesAndUnprintChars(string str)
+        {
+            string res = str;
+
+            // удаление начальных и конечных пробелов
+            res = res.Trim(' ');
+            // сокращение до одного пробела
+            res = Regex.Replace(res, @"\s+", "");
+            // отрезание некоторых ненужных символов
+            res = Regex.Replace(res, @"\?+|\^+|\*+|;+|<+|>+", "");
+            // удаление некоторых повторяющихся символов (сокращение до 1)
+            res = Regex.Replace(res, @"(?<=,),+|(?<=\.)\.+|(?<=!)!+", "");
+            // удаление цифр
+            res = Regex.Replace(res, @"\d+", "");
+            // удаление знаков препинания
+            res = Regex.Replace(res, @"[-.?!)(,:/]", "");
+            // удаление непечаток
+            res = new string(res.Where(c => !char.IsControl(c)).ToArray());
+
+            return res;
+        }
+        private string diagnosisCutSpacesAndUnprintChars(string str)
+        {
+            string res = str;
+
+            // удаление начальных и конечных пробелов
+            res = res.Trim(' ');
+            // сокращение до одного пробела
+            res = Regex.Replace(res, @"\s+", " ");
+            // отрезание некоторых ненужных символов
+            res = Regex.Replace(res, @"\?+|\^+|\*+|;+|<+|>+", "");
+            // удаление некоторых повторяющихся символов (сокращение до 1)
+            res = Regex.Replace(res, @"(?<=,),+|(?<=\.)\.+|(?<=!)!+", "");
+            // удаление цифр
+            res = Regex.Replace(res, @"\d+", "");
+            // удаление знаков препинания
+            res = Regex.Replace(res, @"[-.?!)(,:/]", "");
+            // удаление непечаток
+            res = new string(res.Where(c => !char.IsControl(c)).ToArray());
+
+            return res;
+        }
         private void reloadData()
         {
             db = new HospitalContext();
@@ -84,7 +128,13 @@ namespace RDBMSHospital
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
                         //Edit
-                        if (dbm.EditPatient(id, frm.familyNameTextBox.Text, frm.nameTextBox.Text, frm.fatherNameTextBox.Text, Convert.ToDateTime(frm.birthTextBox.Text), db.social_status.Where(p => p.soc_status.Equals(frm.socStatusComboBox.SelectedItem.ToString())).First().id, db.current_status.Where(p => p.curr_status.Equals(frm.currStatusComboBox.SelectedItem.ToString())).First().id))
+                        string familyName = frm.familyNameTextBox.Text;
+                        string name = frm.nameTextBox.Text;
+                        string fatherName = frm.fatherNameTextBox.Text;
+                        familyName = cutSpacesAndUnprintChars(familyName);
+                        name = cutSpacesAndUnprintChars(name);
+                        fatherName = cutSpacesAndUnprintChars(fatherName);
+                        if (dbm.EditPatient(id, familyName, name, fatherName, frm.birthDateTimePicker.Value, db.social_status.Where(p => p.soc_status.Equals(frm.socStatusComboBox.SelectedItem.ToString())).First().id, db.current_status.Where(p => p.curr_status.Equals(frm.currStatusComboBox.SelectedItem.ToString())).First().id))
                             MessageBox.Show("OK", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         else MessageBox.Show("Error", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         //patiencesDataGridView.DataSource = db.patients.ToList();
@@ -113,7 +163,13 @@ namespace RDBMSHospital
             {
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    if (dbm.AddPatient(frm.familyNameTextBox.Text, frm.nameTextBox.Text, frm.fatherNameTextBox.Text, Convert.ToDateTime(frm.birthTextBox.Text), db.social_status.Where(p => p.soc_status.Equals(frm.socStatusComboBox.SelectedItem.ToString())).First().id, db.current_status.Where(p => p.curr_status.Equals(frm.currStatusComboBox.SelectedItem.ToString())).First().id) == null)
+                    string familyName = frm.familyNameTextBox.Text;
+                    string name = frm.nameTextBox.Text;
+                    string fatherName = frm.fatherNameTextBox.Text;
+                    familyName = cutSpacesAndUnprintChars(familyName);
+                    name = cutSpacesAndUnprintChars(name);
+                    fatherName = cutSpacesAndUnprintChars(fatherName);
+                    if (dbm.AddPatient(familyName, name, fatherName, frm.birthDateTimePicker.Value, db.social_status.Where(p => p.soc_status.Equals(frm.socStatusComboBox.SelectedItem.ToString())).First().id, db.current_status.Where(p => p.curr_status.Equals(frm.currStatusComboBox.SelectedItem.ToString())).First().id) == null)
                         MessageBox.Show("Error", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     //patiencesDataGridView.DataSource = db.patients.ToList();
                     //patiencesDataGridView.DataSource = dbm.GetExtPatients();
@@ -135,8 +191,28 @@ namespace RDBMSHospital
                 {
                     if (frm.ShowDialog() == DialogResult.OK)
                     {
-                        if (dbm.EditDoctor(id, frm.familyNameTextBox.Text, frm.nameTextBox.Text, frm.fatherNameTextBox.Text, db.doctor_position.Where(p => p.position.Equals(frm.posComboBox.SelectedItem.ToString())).First().id, frm.qualifTextBox.Text))
-                            MessageBox.Show("OK", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        string familyName = frm.familyNameTextBox.Text;
+                        string name = frm.nameTextBox.Text;
+                        string fatherName = frm.fatherNameTextBox.Text;
+                        familyName = cutSpacesAndUnprintChars(familyName);
+                        name = cutSpacesAndUnprintChars(name);
+                        fatherName = cutSpacesAndUnprintChars(fatherName);
+                        if (dbm.EditDoctor(id, familyName, name, fatherName, db.doctor_position.Where(p => p.position.Equals(frm.posComboBox.SelectedItem.ToString())).First().id, frm.qualifNumericUpDown.Value, frm.notNullCheckBox.Checked))
+                        {
+                            string spec2 = frm.spec2ComboBox.SelectedItem.ToString();
+                            bool nullSpec = frm.notNullSpecCheckBox.Checked;
+                            int id2 = db.doctor_specialization.Where(p => p.specialization.Equals(spec2)).FirstOrDefault().id;
+                            int did = db.doctors.Where(p => (p.family_name.ToLower().Equals(familyName.ToLower())) && (p.name.ToLower().Equals(name.ToLower())) && (p.father_name.ToLower().Equals(fatherName.ToLower()))).FirstOrDefault().id;
+                            if (nullSpec)
+                            {
+                                if (dbm.AddDoctorNewSpecialization(did, id2))
+                                    MessageBox.Show("OK", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                else
+                                    MessageBox.Show("Error with Specializations", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            else
+                                MessageBox.Show("OK", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                         else MessageBox.Show("Error", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         //doctorsDataGridView.DataSource = db.doctors.ToList();
                         //doctorsDataGridView.DataSource = dbm.GetExtDoctors();
@@ -172,7 +248,24 @@ namespace RDBMSHospital
             {
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
-                    if (dbm.AddDoctor(frm.familyNameTextBox.Text, frm.nameTextBox.Text, frm.fatherNameTextBox.Text, db.doctor_position.Where(p => p.position.Equals(frm.posComboBox.SelectedItem.ToString())).First().id, frm.qualifTextBox.Text) == null)
+                    string familyName = frm.familyNameTextBox.Text;
+                    string name = frm.nameTextBox.Text;
+                    string fatherName = frm.fatherNameTextBox.Text;
+                    familyName = cutSpacesAndUnprintChars(familyName);
+                    name = cutSpacesAndUnprintChars(name);
+                    fatherName = cutSpacesAndUnprintChars(fatherName);
+                    if (dbm.AddDoctor(familyName, name, fatherName, db.doctor_position.Where(p => p.position.Equals(frm.posComboBox.SelectedItem.ToString())).First().id, frm.qualifNumericUpDown.Value, frm.notNullCheckBox.Checked) != null)
+                    {
+                        string spec1 = frm.spec1ComboBox.SelectedItem.ToString();
+                        string spec2 = frm.spec2ComboBox.SelectedItem.ToString();
+                        bool nullSpec = frm.notNullSpecCheckBox.Checked;
+                        int id1 = db.doctor_specialization.Where(p => p.specialization.Equals(spec1)).FirstOrDefault().id;
+                        int id2 = db.doctor_specialization.Where(p => p.specialization.Equals(spec2)).FirstOrDefault().id;
+                        int did = db.doctors.Where(p => (p.family_name.ToLower().Equals(familyName.ToLower())) && (p.name.ToLower().Equals(name.ToLower())) && (p.father_name.ToLower().Equals(fatherName.ToLower()))).FirstOrDefault().id;
+                        if (!dbm.AddDoctorSpecialization(did, id1, id2, nullSpec))
+                            MessageBox.Show("Error with Specializtions", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
                         MessageBox.Show("Error", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     //doctorsDataGridView.DataSource = db.doctors.ToList();
                     //doctorsDataGridView.DataSource = dbm.GetExtDoctors();
@@ -223,7 +316,9 @@ namespace RDBMSHospital
                         locDoctorName = locDoctor.Substring(0, pos);
                         string locDoctorFather = locDoctor.Substring(pos + 1);
                         doctor d = db.doctors.Where(d1 => (d1.family_name == locDoctorFamily) && (d1.name == locDoctorName) && (d1.father_name == locDoctorFather)).FirstOrDefault();
-                        if (dbm.EditResult(id, p.id, d.id, frm.diagnosisTextBox.Text, frm.outpatientCheckBox.Checked, Convert.ToInt32(frm.countDaysTextBox.Text), frm.clinicalAccountCheckBox.Checked, Convert.ToDateTime(frm.startDateTextBox.Text), Convert.ToDateTime(frm.predictedDateTextBox.Text), frm.factDateTextBox.Text))
+                        string diag = frm.diagnosisTextBox.Text;
+                        diag = diagnosisCutSpacesAndUnprintChars(diag);
+                        if (dbm.EditResult(id, p.id, d.id, diag, frm.outpatientCheckBox.Checked, Convert.ToInt32(frm.countDaysTextBox.Text), frm.clinicalAccountCheckBox.Checked, frm.startDateTimePicker.Value, frm.predictedDateTimePicker.Value, frm.factDateTimePicker.Value, frm.notNullCheckBox.Checked))
                             MessageBox.Show("OK", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         else MessageBox.Show("Error", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         //resultDataGridView.DataSource = db.results.ToList();
@@ -273,7 +368,9 @@ namespace RDBMSHospital
                     locDoctorName = locDoctor.Substring(0, pos);
                     string locDoctorFather = locDoctor.Substring(pos + 1);
                     doctor d = db.doctors.Where(d1 => (d1.family_name == locDoctorFamily) && (d1.name == locDoctorName) && (d1.father_name == locDoctorFather)).FirstOrDefault();
-                    if (dbm.AddResult(p.id, d.id, frm.diagnosisTextBox.Text, frm.outpatientCheckBox.Checked, Convert.ToInt32(frm.countDaysTextBox.Text), frm.clinicalAccountCheckBox.Checked, Convert.ToDateTime(frm.startDateTextBox.Text), Convert.ToDateTime(frm.predictedDateTextBox.Text), frm.factDateTextBox.Text) == null)
+                    string diag = frm.diagnosisTextBox.Text;
+                    diag = diagnosisCutSpacesAndUnprintChars(diag);
+                    if (dbm.AddResult(p.id, d.id, diag, frm.outpatientCheckBox.Checked, Convert.ToInt32(frm.countDaysTextBox.Text), frm.clinicalAccountCheckBox.Checked, frm.startDateTimePicker.Value, frm.predictedDateTimePicker.Value, frm.factDateTimePicker.Value, frm.notNullCheckBox.Checked) == null)
                         MessageBox.Show("Error", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     //resultDataGridView.DataSource = db.results.ToList();
                     //resultDataGridView.DataSource = dbm.GetExtResults();

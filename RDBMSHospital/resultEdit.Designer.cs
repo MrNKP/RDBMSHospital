@@ -36,9 +36,6 @@
             this.outpatientCheckBox = new System.Windows.Forms.CheckBox();
             this.countDaysTextBox = new System.Windows.Forms.TextBox();
             this.clinicalAccountCheckBox = new System.Windows.Forms.CheckBox();
-            this.startDateTextBox = new System.Windows.Forms.TextBox();
-            this.predictedDateTextBox = new System.Windows.Forms.TextBox();
-            this.factDateTextBox = new System.Windows.Forms.TextBox();
             this.outpatientLbl = new System.Windows.Forms.Label();
             this.countDaysLbl = new System.Windows.Forms.Label();
             this.clinicLbl = new System.Windows.Forms.Label();
@@ -49,6 +46,10 @@
             this.cancelBtn = new System.Windows.Forms.Button();
             this.patientComboBox = new System.Windows.Forms.ComboBox();
             this.doctorComboBox = new System.Windows.Forms.ComboBox();
+            this.startDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.predictedDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.factDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.notNullCheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // patientLbl
@@ -109,27 +110,6 @@
             this.clinicalAccountCheckBox.Size = new System.Drawing.Size(18, 17);
             this.clinicalAccountCheckBox.TabIndex = 6;
             this.clinicalAccountCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // startDateTextBox
-            // 
-            this.startDateTextBox.Location = new System.Drawing.Point(132, 176);
-            this.startDateTextBox.Name = "startDateTextBox";
-            this.startDateTextBox.Size = new System.Drawing.Size(352, 22);
-            this.startDateTextBox.TabIndex = 7;
-            // 
-            // predictedDateTextBox
-            // 
-            this.predictedDateTextBox.Location = new System.Drawing.Point(132, 204);
-            this.predictedDateTextBox.Name = "predictedDateTextBox";
-            this.predictedDateTextBox.Size = new System.Drawing.Size(352, 22);
-            this.predictedDateTextBox.TabIndex = 8;
-            // 
-            // factDateTextBox
-            // 
-            this.factDateTextBox.Location = new System.Drawing.Point(132, 232);
-            this.factDateTextBox.Name = "factDateTextBox";
-            this.factDateTextBox.Size = new System.Drawing.Size(352, 22);
-            this.factDateTextBox.TabIndex = 9;
             // 
             // outpatientLbl
             // 
@@ -221,6 +201,38 @@
             this.doctorComboBox.Size = new System.Drawing.Size(352, 24);
             this.doctorComboBox.TabIndex = 2;
             // 
+            // startDateTimePicker
+            // 
+            this.startDateTimePicker.Location = new System.Drawing.Point(132, 176);
+            this.startDateTimePicker.Name = "startDateTimePicker";
+            this.startDateTimePicker.Size = new System.Drawing.Size(352, 22);
+            this.startDateTimePicker.TabIndex = 22;
+            // 
+            // predictedDateTimePicker
+            // 
+            this.predictedDateTimePicker.Location = new System.Drawing.Point(132, 204);
+            this.predictedDateTimePicker.Name = "predictedDateTimePicker";
+            this.predictedDateTimePicker.Size = new System.Drawing.Size(352, 22);
+            this.predictedDateTimePicker.TabIndex = 23;
+            // 
+            // factDateTimePicker
+            // 
+            this.factDateTimePicker.Location = new System.Drawing.Point(216, 232);
+            this.factDateTimePicker.Name = "factDateTimePicker";
+            this.factDateTimePicker.Size = new System.Drawing.Size(267, 22);
+            this.factDateTimePicker.TabIndex = 24;
+            // 
+            // notNullCheckBox
+            // 
+            this.notNullCheckBox.AutoSize = true;
+            this.notNullCheckBox.Location = new System.Drawing.Point(132, 233);
+            this.notNullCheckBox.Name = "notNullCheckBox";
+            this.notNullCheckBox.Size = new System.Drawing.Size(78, 21);
+            this.notNullCheckBox.TabIndex = 25;
+            this.notNullCheckBox.Text = "not Null";
+            this.notNullCheckBox.UseVisualStyleBackColor = true;
+            this.notNullCheckBox.CheckedChanged += new System.EventHandler(this.notNullCheckBox_CheckedChanged);
+            // 
             // resultEdit
             // 
             this.AcceptButton = this.acceptBtn;
@@ -229,6 +241,10 @@
             this.CancelButton = this.cancelBtn;
             this.ClientSize = new System.Drawing.Size(495, 376);
             this.ControlBox = false;
+            this.Controls.Add(this.notNullCheckBox);
+            this.Controls.Add(this.factDateTimePicker);
+            this.Controls.Add(this.predictedDateTimePicker);
+            this.Controls.Add(this.startDateTimePicker);
             this.Controls.Add(this.doctorComboBox);
             this.Controls.Add(this.patientComboBox);
             this.Controls.Add(this.cancelBtn);
@@ -239,9 +255,6 @@
             this.Controls.Add(this.clinicLbl);
             this.Controls.Add(this.countDaysLbl);
             this.Controls.Add(this.outpatientLbl);
-            this.Controls.Add(this.factDateTextBox);
-            this.Controls.Add(this.predictedDateTextBox);
-            this.Controls.Add(this.startDateTextBox);
             this.Controls.Add(this.clinicalAccountCheckBox);
             this.Controls.Add(this.countDaysTextBox);
             this.Controls.Add(this.outpatientCheckBox);
@@ -267,9 +280,6 @@
         public System.Windows.Forms.CheckBox outpatientCheckBox;
         public System.Windows.Forms.TextBox countDaysTextBox;
         public System.Windows.Forms.CheckBox clinicalAccountCheckBox;
-        public System.Windows.Forms.TextBox startDateTextBox;
-        public System.Windows.Forms.TextBox predictedDateTextBox;
-        public System.Windows.Forms.TextBox factDateTextBox;
         private System.Windows.Forms.Label outpatientLbl;
         private System.Windows.Forms.Label countDaysLbl;
         private System.Windows.Forms.Label clinicLbl;
@@ -280,5 +290,9 @@
         private System.Windows.Forms.Button cancelBtn;
         public System.Windows.Forms.ComboBox patientComboBox;
         public System.Windows.Forms.ComboBox doctorComboBox;
+        public System.Windows.Forms.DateTimePicker startDateTimePicker;
+        public System.Windows.Forms.DateTimePicker predictedDateTimePicker;
+        public System.Windows.Forms.DateTimePicker factDateTimePicker;
+        public System.Windows.Forms.CheckBox notNullCheckBox;
     }
 }

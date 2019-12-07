@@ -33,7 +33,6 @@
             this.familyNameTextBox = new System.Windows.Forms.TextBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.fatherNameTextBox = new System.Windows.Forms.TextBox();
-            this.qualifTextBox = new System.Windows.Forms.TextBox();
             this.nameLbl = new System.Windows.Forms.Label();
             this.fatherNameLbl = new System.Windows.Forms.Label();
             this.posLbl = new System.Windows.Forms.Label();
@@ -41,6 +40,13 @@
             this.acceptBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.posComboBox = new System.Windows.Forms.ComboBox();
+            this.qualifNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.notNullCheckBox = new System.Windows.Forms.CheckBox();
+            this.spec1ComboBox = new System.Windows.Forms.ComboBox();
+            this.spec2ComboBox = new System.Windows.Forms.ComboBox();
+            this.notNullSpecCheckBox = new System.Windows.Forms.CheckBox();
+            this.specializationLbl = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.qualifNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // familyNameLbl
@@ -72,13 +78,6 @@
             this.fatherNameTextBox.Name = "fatherNameTextBox";
             this.fatherNameTextBox.Size = new System.Drawing.Size(352, 22);
             this.fatherNameTextBox.TabIndex = 3;
-            // 
-            // qualifTextBox
-            // 
-            this.qualifTextBox.Location = new System.Drawing.Point(125, 118);
-            this.qualifTextBox.Name = "qualifTextBox";
-            this.qualifTextBox.Size = new System.Drawing.Size(352, 22);
-            this.qualifTextBox.TabIndex = 5;
             // 
             // nameLbl
             // 
@@ -119,7 +118,7 @@
             // acceptBtn
             // 
             this.acceptBtn.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.acceptBtn.Location = new System.Drawing.Point(8, 146);
+            this.acceptBtn.Location = new System.Drawing.Point(8, 204);
             this.acceptBtn.Name = "acceptBtn";
             this.acceptBtn.Size = new System.Drawing.Size(469, 51);
             this.acceptBtn.TabIndex = 6;
@@ -129,7 +128,7 @@
             // cancelBtn
             // 
             this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelBtn.Location = new System.Drawing.Point(8, 203);
+            this.cancelBtn.Location = new System.Drawing.Point(8, 261);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(469, 51);
             this.cancelBtn.TabIndex = 7;
@@ -144,14 +143,89 @@
             this.posComboBox.Size = new System.Drawing.Size(352, 24);
             this.posComboBox.TabIndex = 4;
             // 
+            // qualifNumericUpDown
+            // 
+            this.qualifNumericUpDown.Location = new System.Drawing.Point(209, 119);
+            this.qualifNumericUpDown.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.qualifNumericUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.qualifNumericUpDown.Name = "qualifNumericUpDown";
+            this.qualifNumericUpDown.Size = new System.Drawing.Size(268, 22);
+            this.qualifNumericUpDown.TabIndex = 10;
+            this.qualifNumericUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // notNullCheckBox
+            // 
+            this.notNullCheckBox.AutoSize = true;
+            this.notNullCheckBox.Location = new System.Drawing.Point(125, 119);
+            this.notNullCheckBox.Name = "notNullCheckBox";
+            this.notNullCheckBox.Size = new System.Drawing.Size(78, 21);
+            this.notNullCheckBox.TabIndex = 11;
+            this.notNullCheckBox.Text = "not Null";
+            this.notNullCheckBox.UseVisualStyleBackColor = true;
+            this.notNullCheckBox.CheckedChanged += new System.EventHandler(this.notNullCheckBox_CheckedChanged);
+            // 
+            // spec1ComboBox
+            // 
+            this.spec1ComboBox.FormattingEnabled = true;
+            this.spec1ComboBox.Location = new System.Drawing.Point(125, 147);
+            this.spec1ComboBox.Name = "spec1ComboBox";
+            this.spec1ComboBox.Size = new System.Drawing.Size(352, 24);
+            this.spec1ComboBox.TabIndex = 12;
+            // 
+            // spec2ComboBox
+            // 
+            this.spec2ComboBox.FormattingEnabled = true;
+            this.spec2ComboBox.Location = new System.Drawing.Point(209, 174);
+            this.spec2ComboBox.Name = "spec2ComboBox";
+            this.spec2ComboBox.Size = new System.Drawing.Size(268, 24);
+            this.spec2ComboBox.TabIndex = 13;
+            // 
+            // notNullSpecCheckBox
+            // 
+            this.notNullSpecCheckBox.AutoSize = true;
+            this.notNullSpecCheckBox.Location = new System.Drawing.Point(125, 176);
+            this.notNullSpecCheckBox.Name = "notNullSpecCheckBox";
+            this.notNullSpecCheckBox.Size = new System.Drawing.Size(78, 21);
+            this.notNullSpecCheckBox.TabIndex = 14;
+            this.notNullSpecCheckBox.Text = "not Null";
+            this.notNullSpecCheckBox.UseVisualStyleBackColor = true;
+            this.notNullSpecCheckBox.CheckedChanged += new System.EventHandler(this.notNullSpecCheckBox_CheckedChanged);
+            // 
+            // specializationLbl
+            // 
+            this.specializationLbl.AutoSize = true;
+            this.specializationLbl.Location = new System.Drawing.Point(12, 150);
+            this.specializationLbl.Name = "specializationLbl";
+            this.specializationLbl.Size = new System.Drawing.Size(107, 17);
+            this.specializationLbl.TabIndex = 15;
+            this.specializationLbl.Text = "Specialization : ";
+            // 
             // doctorEdit
             // 
             this.AcceptButton = this.acceptBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelBtn;
-            this.ClientSize = new System.Drawing.Size(483, 264);
+            this.ClientSize = new System.Drawing.Size(483, 322);
             this.ControlBox = false;
+            this.Controls.Add(this.specializationLbl);
+            this.Controls.Add(this.notNullSpecCheckBox);
+            this.Controls.Add(this.spec2ComboBox);
+            this.Controls.Add(this.spec1ComboBox);
+            this.Controls.Add(this.notNullCheckBox);
+            this.Controls.Add(this.qualifNumericUpDown);
             this.Controls.Add(this.posComboBox);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.acceptBtn);
@@ -159,7 +233,6 @@
             this.Controls.Add(this.posLbl);
             this.Controls.Add(this.fatherNameLbl);
             this.Controls.Add(this.nameLbl);
-            this.Controls.Add(this.qualifTextBox);
             this.Controls.Add(this.fatherNameTextBox);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.familyNameTextBox);
@@ -168,6 +241,7 @@
             this.Name = "doctorEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Doctor";
+            ((System.ComponentModel.ISupportInitialize)(this.qualifNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,7 +253,6 @@
         public System.Windows.Forms.TextBox familyNameTextBox;
         public System.Windows.Forms.TextBox nameTextBox;
         public System.Windows.Forms.TextBox fatherNameTextBox;
-        public System.Windows.Forms.TextBox qualifTextBox;
         private System.Windows.Forms.Label nameLbl;
         private System.Windows.Forms.Label fatherNameLbl;
         private System.Windows.Forms.Label posLbl;
@@ -187,5 +260,11 @@
         private System.Windows.Forms.Button acceptBtn;
         private System.Windows.Forms.Button cancelBtn;
         public System.Windows.Forms.ComboBox posComboBox;
+        public System.Windows.Forms.NumericUpDown qualifNumericUpDown;
+        public System.Windows.Forms.CheckBox notNullCheckBox;
+        public System.Windows.Forms.ComboBox spec1ComboBox;
+        public System.Windows.Forms.ComboBox spec2ComboBox;
+        public System.Windows.Forms.CheckBox notNullSpecCheckBox;
+        private System.Windows.Forms.Label specializationLbl;
     }
 }
